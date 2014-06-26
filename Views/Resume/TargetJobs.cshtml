@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "TargetJobs";
+    Layout = "~/Views/Shared/_LayoutResume.cshtml";
+}
+@model OnlineJobPortal.Models.TargetJob
+
+    <div id="leftPan">
+        <h2>Target <span>Job</span></h2>
+        @using (Html.BeginForm("UpdateTargetJob", "Resume", FormMethod.Post))
+        {
+                   @Html.ValidationSummary(true)
+                  <br /><br /><br /><br /><br />
+                     @Html.HiddenFor(model => model.TargetJobID)
+                     @Html.HiddenFor(model => model.UserID)
+           <table border="0">
+                <tr><td>@Html.LabelFor(model => model.JobTitle)</td>
+                      <td>@Html.TextBoxFor(model => model.JobTitle)</td>
+                      <td>@Html.ValidationMessageFor(model => model.JobTitle)</td></tr>
+              
+                    </table>
+                   <p>
+                         <input type="submit" value="Next" />
+                    </p>
+                }
+ 
+
+    </div>
+
+

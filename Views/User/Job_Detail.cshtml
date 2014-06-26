@@ -1,0 +1,33 @@
+@{
+    ViewBag.Title = "Job Details";
+    Layout = "~/Views/Shared/_LayoutPortal.cshtml";
+}
+@model OnlineJobPortal.Models.Job
+  <div id="leftPan">
+      
+             <h2>Job<span> Details</span></h2><br /><br /><br /><br />
+       <form action="/User/Apply" method="post" class="form1">
+         <table border="1">
+               <tr><th>Company Name</th><td>@Html.DisplayFor(model => model.CompanyName)</td></tr>
+              <tr><th>Job Name</th><td>@Html.DisplayFor(model => model.JobName)</td></tr>
+              <tr><th>Job Type</th><td><@Html.DisplayFor(model => model.JobType)</td></tr>
+              <tr><th>Shift Timings</th><td>@Html.DisplayFor(model => model.Shift_Timings)</td></tr>
+              <tr><th>Required Qualification</th><td>@Html.DisplayFor(model => model.Req_Qualification)</td></tr>
+              <tr><th>Required Experience</th><td>@Html.DisplayFor(model => model.Req_Experience)</td></tr>
+              <tr><th>No of Vacancies</th><td>@Html.DisplayFor(model => model.No_of_Vacancies)</td></tr>
+              <tr><th>Salary Per Month</th><td>@Html.DisplayFor(model => model.Salary)</td></tr>
+              
+             </table>
+           <input type="hidden" id="ID" name="ID" value="@ViewBag.ID"/>
+           <p ><input type="submit" name="apply" value="Apply" /></p>
+           
+           </form>
+    <div id="leftblockonePan">
+	
+		
+    </div>
+   
+  <div id="leftblocktwoPan">   
+  </div>
+  </div>
+  

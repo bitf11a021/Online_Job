@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "View Resume";
+    Layout = "~/Views/Shared/_LayoutResume.cshtml";
+}
+
+
+  <div id="leftPan">
+     <h2>Your <span>Resume</span></h2><br />
+          <h4>Personal Information</h4><br />
+      <table border="0">
+         @foreach (var info in ViewBag.InfoData)
+          {
+              <tr><td><label>Name: </label></td><td>@info.Name</td></tr>
+              <tr><td><label>Father Name: </label></td><td>@info.FatherName</td></tr>
+              <tr><td><label>CNIC: </label></td><td>@info.CNIC</td></tr>
+              <tr><td><label>Gender: </label></td><td>@info.Gender</td></tr>
+              <tr><td><label>Martial Status: </label></td><td>@info.Martial_Status</td></tr>
+              <tr><td><label>Date of Birth: </label></td><td>@info.DOB</td></tr>
+              <tr><td><label>Email Address: </label></td><td>@info.EmailAddress</td></tr>
+              <tr><td><label>Phone No: </label></td><td>@info.Phoneno</td></tr>
+              <tr><td><label>Address: </label></td><td>@info.Address</td></tr>
+              <tr><td><label>Country: </label></td><td>@info.Country</td></tr>
+              <tr><td><label>City: </label></td><td>@info.City</td></tr>
+              <tr><td><label>Industry: </label></td><td>@info.Industry</td></tr>
+             
+          }
+         
+      </table>
+      <br /><h4> Academics </h4><br />
+      <table border="0">
+         @foreach (var info in ViewBag.AcdmyData)
+          {
+              <tr><td><label>Degree Level: </label></td><td>@info.Degree_Level</td></tr>
+              <tr><td><label>Degree Title: </label></td><td>@info.Degree_Title</td></tr>
+              <tr><td><label>Completition Date: </label></td><td>@info.Completition_Date</td></tr>
+              <tr><td><label>CGPA: </label></td><td>@info.CGPA</td></tr>
+              <tr><td><label>Institution: </label></td><td>@info.Institution</td></tr>
+              <tr><td><label>City: </label></td><td>@info.City</td></tr>
+              <tr><td><label>Province: </label></td><td>@info.Province</td></tr>
+              <tr><td><label>Country: </label></td><td>@info.Country</td></tr>
+             
+             
+          }
+         
+      </table>
+  
+  </div>

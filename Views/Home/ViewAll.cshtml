@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "ViewAll";
+    Layout = "~/Views/Shared/_LayoutPortal.cshtml";
+}
+@model OnlineJobPortal.Models.Job
+<div id="leftPan">
+             <h2>Jobs <span>in Pakistan</span></h2><br /><br /><br />
+      <div id="leftblockonePan">
+   
+	    @foreach( var job in ViewBag.x)
+        {
+         
+		<h4><span>-</span> @job.JobName</h4>
+		<p>@job.JobDescription</p>
+        <div id="leftblockoneLinkPan">
+			<ul>
+                <li class="comments"></li>  
+				<li class="more">@Html.ActionLink("details", "Job_Detail", new { id=@job.JobID })</li>
+			</ul>
+		</div>
+        <p class="border"><img src="~/Images/blank.gif" alt="" /></p>
+     }
+     
+    </div>
+      </div>

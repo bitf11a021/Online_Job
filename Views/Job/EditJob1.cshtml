@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "EditJob1";
+    Layout = "~/Views/Shared/_LayoutJob.cshtml";
+}
+
+@model OnlineJobPortal.Models.Job
+
+  <div id="leftPan">
+     <br />
+      <br />
+      <br />
+      <table border="1">
+          <tr><td>@Html.DisplayNameFor(model => model.JobName)</td><td>@Html.DisplayNameFor(model => model.JobCategory)</td><td>@Html.DisplayNameFor(model => model.CompanyName)</td></tr>
+          @foreach (var job in ViewBag.jobsData)
+          {
+              <tr><td>@job.JobName</td><td>@job.JobCategory</td><td>@job.CompanyName</td><td>@Html.ActionLink("Edit", "EditJob", new { id=@job.JobID })</td></tr>
+          }
+      </table>
+   
+  </div>

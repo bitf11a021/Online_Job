@@ -1,0 +1,60 @@
+@{
+    ViewBag.Title = "AddJob";
+    Layout = "~/Views/Shared/_LayoutJob.cshtml";
+}
+ 
+@model OnlineJobPortal.Models.Job 
+@*model binding implemented *@
+  <div id="leftPan">
+		<h2>Add a <span>New Job</span></h2>
+         <form action="/Job/SaveJob" method="get" class="form2">
+             <table border="0">
+          @*<p>Company ID </p><input type="text" id="CompanyID" name="CompanyID"/><p>&nbsp;</p>
+          <p>Company Name </p><input type="text" id="CompanyName" name="CompanyName"/><p>&nbsp;</p>*@
+          <tr><td>Job Name</td><td><input type="text" id="JobName" name="JobName"/></td></tr>
+          <tr><td>Job Category</td>
+              <td><select id="JobCategory" name="JobCategory">
+                    <option value="none">select Category</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Banking">Banking</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Telecom">Telecom</option></select></td>
+          </tr>
+                 <tr><td>Job Type</td><td><select id="JobType" name="JobType">
+                    <option value="none">select Type</option>
+                    <option value="FullTime">FullTime</option>
+                    <option value="PartTime">PartTime</option></select></td></tr>
+                 <tr><td>Shifting Timings</td><td><select id="Shift_Timings" name="Shift_Timings">
+                    <option value="none">select shift</option>
+                    <option value="MorningShift">MorningShift</option>
+                    <option value="AfternoonShift">AfternoonShift</option></select></td></tr>
+                 <tr><td>Required Qualification</td><td><select id="Req_Qualification" name="Req_Qualification">
+                    <option value="none">select Qualification</option>
+                    <option value="Matric">Matric</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Graduation">Graduation</option>
+                   <option value="Masters">Masters</option>
+                   <option value="M-Phil">M-Phil</option>
+                  <option value="Phd">Phd</option></select></td></tr>
+
+                 <tr><td>Required Experience</td><td><select id="Req_Experience" name="Req_Experience">
+                        <option value="none">select option</option>
+                        <option value="Experience">Experience</option>
+                        <option value="NoExperience">NoExperience</option></select></td></tr>
+                 <tr><td>No of Vacancies</td><td><input type="text" id="No_of_Vacancies" name="No_of_Vacancies"/></td></tr>
+                 <tr><td>Salary per month(PKR)</td><td><input type="text" id="Salary" name="Salary"/></td></tr>
+                 <tr><td>Job Description</td><td><textarea rows="5" cols="30" name="JobDescription" id="JobDescription"></textarea></td></tr>
+                 <tr><td>Required Skills</td><td><textarea rows="5" cols="30" name="Req_Skills" id="Req_Skills"></textarea></td></tr>
+                 <tr><td></td><td><input type="submit" value="Add"/></td></tr>
+             </table>		
+	</form>
+
+    </div>
+ 
+  

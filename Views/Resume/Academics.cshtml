@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "Academics";
+    Layout = "~/Views/Shared/_LayoutResume.cshtml";
+}
+@model OnlineJobPortal.Models.Academic
+<div id="leftPan">
+     <div id="leftblockonePan">
+		<h2>Add new <span>Academic Records</span></h2>
+        
+          @using (Html.BeginForm("UpdateAcademics", "Resume", FormMethod.Post))
+          {
+             @Html.ValidationSummary(true)
+             <br /><br /><br />
+              @Html.HiddenFor(model => model.AcademicID)
+              @Html.HiddenFor(model => model.UserID)
+              <div class="editor-label">
+                 @Html.LabelFor(model => model.Degree_Level)
+              </div>
+               <div class="editor-field">
+           <select name="Degree_Level">
+
+               @if (ViewBag.Degree_Level == null)
+               {
+                     <option value="none">please select</option>
+                    <option value="Matric">Matric</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Masters">Masters</option>
+                    <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+               }
+                @if (ViewBag.Degree_Level != null)
+                {
+                    if (Model.Degree_Level.Equals("Matric"))
+                    {
+                        <option value="Matric" selected="selected">Matric</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+                    }
+                    if (Model.Degree_Level.Equals("Intermediate"))
+                    {
+                        <option value="Matric" >Matric</option>
+                        <option value="Intermediate" selected="selected">Intermediate</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+                    }
+                    if (Model.Degree_Level.Equals("Graduation"))
+                    {
+                        <option value="Matric" >Matric</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Graduation" selected="selected">Graduation</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+                    }
+                    if (Model.Degree_Level.Equals("Masters"))
+                    {
+                        <option value="Matric" >Matric</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Masters" selected="selected">Masters</option>
+                        <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+                    }
+                    if (Model.Degree_Level.Equals("Doctrate(PhD)"))
+                    {
+                        <option value="Matric" >Matric</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Doctrate(PhD)"selected="selected">Doctrate(PhD)</option>
+                    }
+                    if (Model.Degree_Level.Equals("none"))
+                    {
+                        <option value="Matric" >Matric</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Masters">Masters</option>
+                        <option value="Doctrate(PhD)">Doctrate(PhD)</option>
+                    }
+
+                }
+                 </select>
+           </div>
+              <div class="editor-label">
+                @Html.LabelFor(model => model.Degree_Title)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Degree_Title)
+                @Html.ValidationMessageFor(model => model.Degree_Title)
+            </div>
+              <div class="editor-label">
+                @Html.LabelFor(model => model.Completition_Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Completition_Date)
+                @Html.ValidationMessageFor(model => model.Completition_Date)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CGPA)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CGPA)
+                @Html.ValidationMessageFor(model => model.CGPA)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Institution)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Institution)
+                @Html.ValidationMessageFor(model => model.Institution)
+            </div>
+             <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+           <select name="City">
+                @if (ViewBag.City == null)
+                {
+                    <option value="none">select type</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="karachi">karachi</option>
+                    <option value="Islamabad">Islamabad</option>
+                }
+                @if (ViewBag.City != null)
+                {
+                       if (Model.City.Equals("Lahore"))
+                       {
+                         <option value="Lahore" selected="selected">Lahore</option>
+                         <option value="karachi">karachi</option>
+                         <option value="Islamabad">Islamabad</option>
+                       }
+                       if (Model.City.Equals("karachi"))
+                       {
+                           <option value="Lahore">Lahore</option>
+                         <option value="karachi" selected="selected">karachi</option>
+                         <option value="Islamabad">Islamabad</option>
+                       }
+                       if (Model.City.Equals("Islamabad"))
+                       {
+                           <option value="Lahore">Lahore</option>
+                         <option value="karachi" >karachi</option>
+                         <option value="Islamabad" selected="selected">Islamabad</option>
+                       }
+                       if(Model.City.Equals("none"))
+                       {
+                            <option value="none">select type</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="karachi">karachi</option>
+                            <option value="Islamabad">Islamabad</option>
+                       }
+                }
+            
+          </select>
+        </div>
+          <div class="editor-label">
+            @Html.LabelFor(model => model.Province)
+        </div>
+        <div class="editor-field">
+           <select name="Province" id="Province">
+                @if (ViewBag.Province == null)
+                {
+                   <option >Select Province</option>
+                   <option value="Punjab">Punjab</option>
+                   <option value="Sindh">Sindh</option>
+                   <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                   <option value="Balochistan">Balochistan</option>
+                }
+                @if (ViewBag.Province != null)
+                {
+                      if (Model.Province.Equals("Punjab"))
+                       {
+                         <option value="Punjab" selected="selected">Punjab</option>
+                        <option value="Sindh">Sindh</option>
+                        <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                        <option value="Balochistan">Balochistan</option>
+                       }
+                       if (Model.Province.Equals("Sindh"))
+                       {
+                            <option value="Punjab">Punjab</option>
+                            <option value="Sindh"selected="selected">Sindh</option>
+                            <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                            <option value="Balochistan">Balochistan</option>
+                       }
+                       if (Model.Province.Equals("Khyber Pakhtunkhwa"))
+                       {
+                           <option value="Punjab">Punjab</option>
+                           <option value="Sindh">Sindh</option>
+                           <option value="Khyber Pakhtunkhwa" selected="selected">Khyber Pakhtunkhwa</option>
+                           <option value="Balochistan">Balochistan</option>
+                       }
+                       if (Model.Province.Equals("Balochistan"))
+                       {
+                           <option value="Punjab">Punjab</option>
+                           <option value="Sindh">Sindh</option>
+                           <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                           <option value="Balochistan" selected="selected">Balochistan</option>
+                       }
+                       if (Model.Province.Equals("none"))
+                       {
+                           <option >Select Province</option>
+                           <option value="Punjab">Punjab</option>
+                           <option value="Sindh">Sindh</option>
+                           <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                           <option value="Balochistan">Balochistan</option>
+                       }
+                }
+            
+          </select>
+        </div>
+             
+         
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+           <select name="Country">
+               @if (ViewBag.Country == null)
+               {
+                    <option value="none">select type</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="India">India</option>
+                    <option value="America">America</option>
+               }
+               @if (ViewBag.Country != null)
+               {
+                   if (Model.Country.Equals("Pakistan"))
+                   {
+                     <option value="Pakistan" selected="selected">Pakistan</option>
+                     <option value="India">India</option>
+                     <option value="America">America</option>
+                   }
+                   if (Model.Country.Equals("India"))
+                   {
+                       <option value="Pakistan">Pakistan</option>
+                     <option value="India" selected="selected">India</option>
+                     <option value="America">America</option>
+                   }
+                    if (Model.Country.Equals("America"))
+                   {
+                       <option value="Pakistan">Pakistan</option>
+                     <option value="India" >India</option>
+                     <option value="America" selected="selected">America</option>
+                   }
+                   if(Model.Country.Equals("none"))
+                   {
+                        <option value="none">select type</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="India">India</option>
+                        <option value="America">America</option>
+                   }
+                   
+               }
+          </select>
+        </div>
+         <div class="editor-label">
+                        @Html.LabelFor(model => model.Details)
+                    </div>
+                    <div class="editor-field">
+                        @Html.TextAreaFor(model => model.Details)
+                    </div>
+                    <p>
+                        <input type="submit" value="Next" />
+                    </p>
+    }
+
+    </div>
+
+    </div>

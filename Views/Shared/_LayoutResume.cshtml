@@ -1,0 +1,76 @@
+@{
+    ViewBag.Title = "_LayoutResume";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Opportunity.com</title>
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="topPan1">
+	<a href="Index.cshtml"><img src="~/Images/logo.gif" title="Brain Tech" alt="Brain Tech" width="219" height="58" border="0"  class="logo"/></a>
+	
+    <div id="topimagePan"><img src="~/Images/blank.gif" alt="" /></div>
+	<ul>
+		<li><a href="/Home/Index">Home</a></li>
+		<li><a href="/Home/AboutUs">About Us</a></li>
+		<li><a href="/Home/Categories">Categories</a></li>
+        <li><a href="/Resume/ResumeManagement">Resume</a></li>
+        <li><a href="/Home/ContactUs">Contact Us</a></li>
+        <li><a href="/Account/Logout">Logout</a></li>
+       
+  </ul>
+</div>
+
+<div id="bodyPan">
+  	
+    @RenderBody()
+
+
+  <div id="rightPan">
+      <br />
+      <div id="rightform3Pan">
+	        <h2>Resume Management</h2>
+          <ul>
+           	<li><a href="/Resume/PersonalInformation">Personal Information</a></li>
+		    <li><a href="/Resume/Academics">Academics</a></li>
+		    <li><a href="/Resume/Experiences">Experiences</a></li>
+		    <li><a href="/Resume/Projects">Projects</a></li>
+		    <li><a href="/Resume/Languages">Languages</a></li>
+            <li><a href="/Resume/Skills">Skills</a></li>
+            <li><a href="/Resume/References">References</a></li>
+            <li><a href="/Resume/Honours">Honours and Awards</a></li>
+            <li><a href="/Resume/TargetJobs">Target Jobs</a></li>
+	</ul>
+
+	</div>
+      </div>
+      
+</div> <!-- bodypan div end-->
+<div id="bodyBottomPan">
+  <div id="BottomLeftPan">
+  	
+  </div>
+  
+  <div id="BottomMiddlePan">
+  	
+  </div>
+</div>
+<div id="footerPan">
+	<ul>
+		<li><a href="/Home/Index">Home</a>|</li>
+		<li><a href="/Home/AboutUs">About Us</a>|</li>
+		<li><a href="/Home/Categories">Categories</a>|</li>
+        <li><a href="/Resume/ResumeManagement">Resume</a>|</li>
+        <li><a href="/Home/ContactUs">Contact Us</a>|</li>
+        <li><a href="/Home/Index">Logout</a></li>
+		</ul>
+		<p class="copyright">©oportunity. all right reserved.</p>
+    </div>
+		
+</body>
+</html>
+
