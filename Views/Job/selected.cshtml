@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "SeekEmployees";
+    ViewBag.Title = "selected";
     Layout = "~/Views/Shared/_LayoutResume.cshtml";
 }
 @section tabs{
@@ -14,7 +14,7 @@
   </ul>
  }  
 @section ResumeManagement{
-    <div id="rightform3Pan">
+   <div id="rightform3Pan">
 	        <h2>Categories</h2>
           <ul>
            	<li><a href="/User/Admin_Jobs">Admin</a></li>
@@ -40,30 +40,10 @@
 	</ul>
 	
 }  
-@model OnlineJobPortal.Models.User
 <div id="leftPan">
-             <h2>Job <span>Seekers</span></h2><br /><br /><br />
-      <div id="leftblockonePan">
-   <form action="/Job/selected" method="post">
-	   <table border="1">
-           <tr><th><label>Applicant Name </label></th><th><label>Company Name </label></th><th><label>Job Name </label></th><th>Selected</th></tr>
-            
-          @foreach (var info in ViewBag.emplist)
-          {
-              
-                <tr><td>@info.Name</td><td>Confiz</td><td>Web Developer</td><td><input type="checkbox" id="selected" name="selected" /></td></tr>
-          }
-          
-            @*@foreach (var job in ViewBag.Joblist)
-            {
-               <tr> <td>@job.CompanyName</td><td>@job.JobName</td></tr>
-            }*@
-          
-         </table>
-       <p><input type="submit" value="Submit" /></p>
-       </form>
-</div>
-      </div>
+<h4>The mail has been sent to the selected candidates.</h4>
+    </div>
+
 @section Footer{
     <div id="footerPan">
 	<ul>

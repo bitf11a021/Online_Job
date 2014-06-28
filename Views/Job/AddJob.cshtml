@@ -1,16 +1,54 @@
 @{
     ViewBag.Title = "AddJob";
-    Layout = "~/Views/Shared/_LayoutJob.cshtml";
+    Layout = "~/Views/Shared/_LayoutResume.cshtml";
 }
- 
+ @section tabs{
+     <div id="topimagePan"><img src="~/Images/blank.gif" alt="" /></div>
+	<ul>
+		<li><a href="/Job/Home">Home</a></li>
+		<li><a href="/Home/AboutUs">About Us</a></li>
+        <li><a href="/Job/Home">Job Area</a></li>
+        <li><a href="/Home/ContactUs">Contact Us</a></li>
+        <li><a href="/Account/Logout">Logout</a></li>
+       
+  </ul>
+ }  
+@section ResumeManagement{
+    <div id="rightform3Pan">
+	        <h2>Categories</h2>
+          <ul>
+           	<li><a href="/User/Admin_Jobs">Admin</a></li>
+		    <li><a href="/User/Marketing_Jobs">Marketing</a></li>
+		    <li><a href="/User/IT_Jobs">IT</a></li>
+		    <li><a href="/User/HR_Jobs">HR</a></li>
+            <li><a href="/User/Accounting_Jobs">Accounting</a></li>
+	</ul>
+
+	</div>
+}  
+@section TopJobs{
+    <div id="rightform4Pan">
+	    <h2>Top 5 jobs</h2> </div>
+	<ul>
+		<marquee direction="down">
+		<li><a href="/Home/TopJobs">Web Developer</a></li>
+		<li><a href="/Home/TopJobs">Web Content Writer</a></li>
+		<li><a href="/Home/TopJobs">SEO Expert </a></li>
+		<li><a href="/Home/TopJobs">Network Administrator </a></li>
+		<li><a href="/Home/TopJobs">HR Manager </a></li>
+            </marquee>
+	</ul>
+	
+}  
 @model OnlineJobPortal.Models.Job 
 @*model binding implemented *@
   <div id="leftPan">
 		<h2>Add a <span>New Job</span></h2>
          <form action="/Job/SaveJob" method="get" class="form2">
+             <input type="hidden" name="CompanyID" id="CompanyID" value="@ViewBag.userid"/>
+             <input type="hidden" name="CompanyName" id="CompanyName" value="Confiz"/>
              <table border="0">
-          @*<p>Company ID </p><input type="text" id="CompanyID" name="CompanyID"/><p>&nbsp;</p>
-          <p>Company Name </p><input type="text" id="CompanyName" name="CompanyName"/><p>&nbsp;</p>*@
+          
           <tr><td>Job Name</td><td><input type="text" id="JobName" name="JobName"/></td></tr>
           <tr><td>Job Category</td>
               <td><select id="JobCategory" name="JobCategory">
@@ -57,4 +95,15 @@
 
     </div>
  
-  
+  @section Footer{
+    <div id="footerPan">
+	<ul>
+		<li><a href="/Home/Index">Home </a>| </li>
+		<li><a href="/Home/AboutUs">About Us</a>| </li>
+		<li><a href="/Job/Home">Job Area</a>| </li>
+		<li><a href="/Home/ContactUs">Contact Us</a>| </li>
+		<li><a href="/Home/Index">Logout</a></li>
+		</ul>
+		<p class="copyright">©Opportunity. all right reserved.</p>
+    </div>
+}

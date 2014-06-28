@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Marketing_Jobs";
+    ViewBag.Title = "TopJobs";
     Layout = "~/Views/Shared/_LayoutResume.cshtml";
 }
 @section tabs{
@@ -12,7 +12,7 @@
         <li><a href="/Home/ContactUs">Contact Us</a></li>
         <li><a href="/Account/Logout">Logout</a></li>
        
-  </ul> 
+  </ul>
 }
 @section ResumeManagement{
     <div id="rightform3Pan">
@@ -82,31 +82,44 @@
     </script>
 
 } 
-@model OnlineJobPortal.Models.Job
-  <div id="leftPan">
-             <h2>Marketing Jobs <span>in Pakistan</span></h2><br />
-    <div id="leftblockonePan">
-		@foreach (var job in ViewBag.jobsData)
-        {
-         
-		<h4><span>-</span> @job.JobName</h4>
-		<p>@job.JobDescription</p>
-        <div id="leftblockoneLinkPan">
+<div id="leftPan">
+             <h2>Top <span>Jobs</span></h2><br /><br /><br />
+       <div id="leftblockonePan">
+		<h4><span>1.</span>Web Content Writer </h4>
+		<p>We are small but rapidly growing Recruitment Digital Publishing Media company looking to expand its operations. 
+            We are looking for HR Executives to join our team as soon as possible. You'll be provided with massive learning and growth 
+            opportunity and a comfortable working environment. </p>
+         @*<div id="leftblockoneLinkPan">
 			<ul>
-                <li class="comments"></li>  
-				<li class="more">@Html.ActionLink("details", "Job_Detail", new { id=@job.JobID })</li>
+                <li class="comments"></li>
+				<li class="more"><a href="#">more</a></li>
 			</ul>
-		</div>
+		</div>*@
         <p class="border"><img src="~/Images/blank.gif" alt="" /></p>
-     }
- 
+		
+        <h4><span>2.</span>Web Developer</h4>
+		<p>We at PakLingo, hiring for the vacant position of "Web Developer". Candidate who meet the below mentioned criteria are
+             encouraged to apply.</p>
+            <p class="border"><img src="~/Images/blank.gif" alt="" /></p>
+		
+        <h4><span>3.</span>SEO Expert</h4>
+		<p>We at BinaryTech, hiring for the vacant position of "SEO Expert". Candidate who meet the below mentioned criteria are
+             encouraged to apply.</p>
+           <p class="border"><img src="~/Images/blank.gif" alt="" /></p>
+		
+        <h4><span>4.</span>Network Administrator</h4><br />
+		<p>We at Advantum, hiring for the vacant position of "Network Administrator". Candidate who meet the below mentioned criteria are
+             encouraged to apply.</p>
+           <p class="border"><img src="~/Images/blank.gif" alt="" /></p>
+		
+        <h4><span>5.</span>HR Manager</h4>
+		<p>We at Advantum, hiring for the vacant position of HR Manager for our company. Candidate who meet the below mentioned criteria are
+             encouraged to apply.</p>
     </div>
- 
-   
-  <div id="leftblocktwoPan">   
-  </div>
-  </div>
-  @section Footer{
+     
+      </div>
+
+@section Footer{
     <div id="footerPan">
 	<ul>
 		<li><a href="/Home/Index">Home</a>|</li>
