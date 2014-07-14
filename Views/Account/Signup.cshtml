@@ -50,6 +50,10 @@
               <td>@Html.PasswordFor(model => model.Password,new { id = "Password",name="Password" })</td>
                <td>@Html.ValidationMessageFor(model => model.Password)</td></tr>
 
+          <tr><td>@Html.LabelFor(model => model.Confirm_Password)</td>
+              <td>@Html.PasswordFor(model => model.Confirm_Password,new { id = "Confirm_Password",name="Confirm_Password" })</td>
+               <td>@Html.ValidationMessageFor(model => model.Confirm_Password)</td></tr>
+
           <tr><td>@Html.LabelFor(model => model.Address)</td>
               <td>@Html.TextBoxFor(model => model.Address,new { id = "Address",name="Address" })</td></tr>
 
@@ -166,7 +170,7 @@
 		<li><a href="#">Categories</a>| </li>
 		<li><a href="#">Contact Us</a></li>
 		</ul>
-		<p class="copyright">©oportunity. all right reserved.</p>
+		<p class="copyright">©Opportunity. all right reserved.</p>
     </div>
 		
 </body>

@@ -40,30 +40,26 @@
 	</ul>
 	
 }  
-@model OnlineJobPortal.Models.User
+
+@model IEnumerable<OnlineJobPortal.Models.ViewModel>
 <div id="leftPan">
              <h2>Job <span>Seekers</span></h2><br /><br /><br />
       <div id="leftblockonePan">
    <form action="/Job/selected" method="post">
-	   <table border="1">
-           <tr><th><label>Applicant Name </label></th><th><label>Company Name </label></th><th><label>Job Name </label></th><th>Selected</th></tr>
-            
-          @foreach (var info in ViewBag.emplist)
-          {
-              
-                <tr><td>@info.Name</td><td>Confiz</td><td>Web Developer</td><td><input type="checkbox" id="selected" name="selected" /></td></tr>
-          }
-          
-            @*@foreach (var job in ViewBag.Joblist)
-            {
-               <tr> <td>@job.CompanyName</td><td>@job.JobName</td></tr>
-            }*@
-          
-         </table>
+	   <table>
+        <tr><td>Applicant Name</td><td>Job Name</td><td>Company Name</td><td>Selected</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@Html.DisplayFor(model=>item.User.Name)</td><td>@Html.DisplayFor(model=>item.Job.JobName)</td>
+            <td>@Html.DisplayFor(model=>item.Job.CompanyName)</td><td><input type="checkbox" id="@item.ApplyforJob.ApplyID" name="selectedEmp" value="@item.ApplyforJob.ApplyID"/></td></tr>
+        
+    }
+        </table>
        <p><input type="submit" value="Submit" /></p>
        </form>
 </div>
       </div>
+   
 @section Footer{
     <div id="footerPan">
 	<ul>

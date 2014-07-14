@@ -48,32 +48,32 @@
 		<p><input name="search" type="text"/></p>
 		<input type="submit"  class="search" value="SEARCH"/>
 	</form>
+     @*<div id="rightform2Pan">
+	<form action="/Home/Search" method="post" class="form2">
+		<h2>Search Here</h2>
+		<p><input name="search" type="text" id="search"/></p>
+		<input name="search" type="button"  class="search" id="b1" value="SEARCH"/>
+	</form>*@
 
-   
+   <div id="result1"> </div>
   @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript">
 
         $(document).ready(function () {
-
-            $('#searching').hide();
-
             $('#b1').click(function () {
 
                 var search1 = $('#search').val();
 
                 alert('Text=' + search1);
-                $('#searching').show();
                 $.getJSON("/Home/Search?search=" + search1, function (data) {
-                    $('#searching').hide();
-                    if (data) {
-                        $('#result').text("Job Category exits.");
-                        //alert('User already exists in database.. Try another one!');
+                        alert("I am in JSON")
+                        $('#result1').html('Search list: ' + "<br/>");
+                        $.each(data, function (i, item) {
+                            alert(item.JobName)
+                            $('#result1').append("<br/>" + "JobName: " + item.JobName);
+                        });
 
-                    }
-                    else {
-                        $('#result').text("Job Category doesnot exist.");
-                        //alert('User Name is available!');
-                    }
+                   
                 });
 
             });
@@ -105,6 +105,7 @@
       <div id="leftblocktwoPan">   
   </div>
   </div>
+         
    @section Footer{
     <div id="footerPan">
 	<ul>
